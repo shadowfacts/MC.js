@@ -9,11 +9,6 @@ var MC  = {
 	init: init
 };
 
-MC.craftingBackground.src = "crafting-recipe.png";
-MC.smeltingBackground.src = "smelting-recipe.png"
-
-MC.register("Minecraft", "sheet.png", "sheet-min.json");
-
 function register(modid, textureSheet, uvMap) {
 	modid = modid.toLowerCase();
 	if (!MC.modids.includes(modid)) MC.modids.push(modid);
