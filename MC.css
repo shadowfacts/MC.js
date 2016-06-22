@@ -1,0 +1,24 @@
+@font-face {
+	font-family: "Minecraftia";
+	src: url("Minecraftia-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.minecraftia {
+	font-family: Minecraftia;
+}
+
+canvas.recipe {
+	border-radius: 2px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.mcitem {
+	vertical-align: top;
+	width: 32px;
+	height: 32px;
+	margin-right: 4px;
+	display: inline-block;
+}
