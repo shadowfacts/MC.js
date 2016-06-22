@@ -29,14 +29,23 @@ function init() {
 			requests.push($.get(MC.uvMapURLs[i]));
 		}
 	}
-	$.when.apply($, requests).done(function() {
-		$.each(arguments, function(i, data) {
-			MC.uvMaps[MC.modids[i]] = JSON.parse(data[0]);
-		});
+	if (requests.length == 1) {
+		requests[0].done(function(data) {
+			MC.uvMaps[MC.modids[0]] = data;
 
-		addCanvases();
-		setItems();
-	});
+			addCanvases();
+			setItems();
+		});
+	} else {
+		$.when.apply($, requests).done(function() {
+			$.each(arguments, function(i, data) {
+				MC.uvMaps[MC.modids[i]] = data[0];
+			});
+
+			addCanvases();
+			setItems();
+		});
+	}
 
 }
 
