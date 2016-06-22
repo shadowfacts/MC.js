@@ -16,7 +16,7 @@ MC.register("Minecraft", "sheet.png", "sheet-min.json");
 
 function register(modid, textureSheet, uvMap) {
 	modid = modid.toLowerCase();
-	MC.modids.push(modid);
+	if (!MC.modids.includes(modid)) MC.modids.push(modid);
 	MC.textureSheets[modid] = new Image();
 	MC.textureSheets[modid].src = textureSheet;
 	MC.uvMapURLs[modid] = uvMap;
